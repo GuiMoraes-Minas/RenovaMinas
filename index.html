@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renova Minas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+<body>
+
+
+
+
+    <div class="container">
+        <header>
+                
+                <a href="index.html">Início</a>
+                <a href="quemsomos.html">Quem Somos</a>
+                <a href="diretoria.html">Diretoria</a>
+                <a href="juridico.html">Jurídico</a>
+                <a href="associe.html">Associe-se</a>
+                <a href="contato.html">Contato</a>
+
+                <form name="submit-to-google-sheet">
+
+                    <input name="nome" type="text" placeholder="Nome" required>
+            
+                    <input name="email" type="text" placeholder="Email">
+            
+                    <input name="mensagem" type="text" placeholder="Mensagem">
+            
+                    <input name="telefone" type="number" placeholder="Telefone">
+            
+                    <button type="submit">Send</button>
+            
+                </form>
+            
+            
+             
+            
+                <script>
+            
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzsG3tjt7tMPJjZdTP45xt9zlF6oRuUFCka6AY9BZeweHY_jWDCq3Y-lZ7prQx-bSY/exec'
+            
+                    const form = document.forms
+            
+                    ['submit-to-google-sheet']
+            
+            
+             
+            
+                    form.addEventListener('submit', e => {
+            
+                        e.preventDefault()
+            
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            
+                            .then(response => console.log('Sucess!',response))
+            
+                            .catch(error => console.error('Error!', error.message))
+            
+                            form.reset();
+            
+                    })
+            
+                </script>
+
+            <!--
+                 'https://script.google.com/macros/s/AKfycbzsG3tjt7tMPJjZdTP45xt9zlF6oRuUFCka6AY9BZeweHY_jWDCq3Y-lZ7prQx-bSY/exec'
+
+                var sheetName = 'Sheet1'
+var scriptProp = PropertiesService.getScriptProperties()
+
+function intialSetup () {
+    var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+    scriptProp.setProperty('key', activeSpreadsheet.getId())
+}
+
+function doPost (e) {
+    var lock = LockService.getScriptLock()
+    lock.tryLock(10000)
+
+    try{
+        var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+        var sheet = doc.getSheetByName(sheetName)
+
+        var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+        var nextRow = sheet.getLastRow() + 1
+
+        var newRow = headers.map(function(header) {
+            return header === 'timestamp' ? new Date() : e.parameter[header]
+        })
+
+        sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+        
+        return ContentService
+         .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+         .setMimeType(ContentService.MimeType.JSON)
+    }
+
+    catch (e) {
+        return ContentService
+        .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e}))
+        .setMimeType(ContentService.MimeType.JSON)
+    }
+
+    finally {
+        lock.releaseLock()
+    }
+}
+                    
+            -->
+         
+        </header>   
+
+        <nav></nav>
+        <main><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhpvzwjLMsQAMFPrGaK27JsQMMPTpuJSYBLWOTdw2SvYIOnw/viewform?embedded=true" width="500" height="350" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe></main>
+        <section></section>
+        <div id="a0"></div>
+        <div id="a1"></div>
+        <div id="a2"></div>
+        <div id="a3"></div>
+        <div id="a4"></div>
+         <footer></footer>
+       </div>  
+
+
+
+
+</body>
+</html>
