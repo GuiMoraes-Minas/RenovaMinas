@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renova Minas</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Criado para estilizar pagina, coloquei um padrão para todo site /!-->
+
+</head>
+<body>
+
+
+
+
+    <div class="container">
+        <header>
+                
+                <a href="index.html">Início - </a>
+                <a href="quemsomos.html">Quem Somos - </a>
+                <a href="diretoria.html">Diretoria - </a>
+                <a href="juridico.html">Jurídico - </a>
+                <a href="associe.html">Associe-se - </a>
+                <a href="contato.html">Contato</a>
+
+              
+                <script>
+            
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzsG3tjt7tMPJjZdTP45xt9zlF6oRuUFCka6AY9BZeweHY_jWDCq3Y-lZ7prQx-bSY/exec'
+            
+                    const form = document.forms
+            
+                    ['submit-to-google-sheet']
+            
+            
+             
+            
+                    form.addEventListener('submit', e => {
+            
+                        e.preventDefault()
+            
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            
+                            .then(response => console.log('Sucess!',response))
+            
+                            .catch(error => console.error('Error!', error.message))
+            
+                            form.reset();
+            
+                    })
+            
+                </script>
+
+                <!--Este codigo serve para o conteiner de acesso para Quem Somos, Diretoria ect...-->
+
+   
+        </header>   
+
+        <nav>
+
+            <h1 class="primeiro"> Associação Renova Minas - Renova Minas - CNPJ 40017716000116 </h1>
+
+        </nav>
+
+        <main><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhpvzwjLMsQAMFPrGaK27JsQMMPTpuJSYBLWOTdw2SvYIOnw/viewform?embedded=true" width="220%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe></main>
+            <!-- este codigo possibilita colocar formulario criado dentro da conta google, uma forma de interagir no site-->
+        <section>
+
+           <p> Endereço da Empresa:</p>
+
+           Logradouro: AV MARCIA ANTONIA
+           Numero: 803
+           CEP: 32920000
+           Complemento:
+           Bairro: TEREZA CRISTINA
+           Município: SAO JOAQUIM DE BICAS
+           UF: MG
+          <p>Contatos da Empresa:</p>
+
+           Telefone: (31) 7555-9251 - E-mail: minasrenova@gmail.com
+        
+        </section>
+
+
+        <div id="a0">  <a href="https://www.policiacivil.mg.gov.br/"><img src="Policia_Civil_MG121.png" alt=" "width="95%" height="95%"></a> </div>
+        <div id="a1">  <a href="https://www.policiamilitar.mg.gov.br/portal-pm/externo/principal.action"><img src="PM-MG.png" alt=" "width="100%" height="100%"></a>  </div>
+        <div id="a2">  <a href="http://www.seguranca.mg.gov.br/"><img src="sejusp-mg.webp" alt=" "width="100%" height="100%"></a>  </div>
+        <div id="a3">  <a href="http://www.depen.seguranca.mg.gov.br/ "><img src="depen mg.png" alt=" "width="100%" height="100%"></a>  </div>
+       
+        <div id="a4">
+            
+            RENOVA MINAS - DEFENDE AQUELES QUE DEFENDEM! VENHA E FAÇA A DIFERENÇA - SE CADASTRE AQUI  
+    
+        </div>
+
+         <footer> <form name="submit-to-google-sheet">
+
+            <input name="nome" type="text" placeholder="Nome" required>
+            <input name="masp" type="number" placeholder="Masp">
+            <input name="email" type="text" placeholder="Email">
+            <input name="mensagem" type="text" placeholder="Mensagem">
+            <input name="telefone" type="number" placeholder="Telefone">
+            <input name="endereço" type="number" placeholder="Endereço">
+            <button type="submit"> Enviar - entraremos em contato</button>
+
+          </form> </footer>
+
+       </div>  
+       <!--essa div contem codigo de cadastro de pessoas, planilha exel criada dentro da conta google-->
+
+</body>
+</html>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,41 +10,22 @@
 
     <link rel="stylesheet" href="style.css">
 
-
-
+    <!-- Criado para estilizar pagina, coloquei um padrão para todo site /!-->
+ 
 </head>
+
 <body>
 
-
-
-
     <div class="container">
+
         <header>
-                
-                <a href="index.html">Início</a>
-                <a href="quemsomos.html">Quem Somos</a>
-                <a href="diretoria.html">Diretoria</a>
-                <a href="juridico.html">Jurídico</a>
-                <a href="associe.html">Associe-se</a>
+                <a href="index.html">Início - </a>
+                <a href="quemsomos.html">Quem Somos - </a>
+                <a href="diretoria.html">Diretoria - </a>
+                <a href="juridico.html">Jurídico - </a>
+                <a href="associe.html">Associe-se - </a>
                 <a href="contato.html">Contato</a>
 
-                <form name="submit-to-google-sheet">
-
-                    <input name="nome" type="text" placeholder="Nome" required>
-            
-                    <input name="email" type="text" placeholder="Email">
-            
-                    <input name="mensagem" type="text" placeholder="Mensagem">
-            
-                    <input name="telefone" type="number" placeholder="Telefone">
-            
-                    <button type="submit">Send</button>
-            
-                </form>
-            
-            
-             
-            
                 <script>
             
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbzsG3tjt7tMPJjZdTP45xt9zlF6oRuUFCka6AY9BZeweHY_jWDCq3Y-lZ7prQx-bSY/exec'
@@ -51,8 +34,6 @@
             
                     ['submit-to-google-sheet']
             
-            
-             
             
                     form.addEventListener('submit', e => {
             
@@ -67,69 +48,55 @@
                             form.reset();
             
                     })
-            
+
                 </script>
+               <!--Este codigo serve para o conteiner de acesso para Quem Somos, Diretoria ect...-->
 
-            <!--
-                 'https://script.google.com/macros/s/AKfycbzsG3tjt7tMPJjZdTP45xt9zlF6oRuUFCka6AY9BZeweHY_jWDCq3Y-lZ7prQx-bSY/exec'
-
-                var sheetName = 'Sheet1'
-var scriptProp = PropertiesService.getScriptProperties()
-
-function intialSetup () {
-    var activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
-    scriptProp.setProperty('key', activeSpreadsheet.getId())
-}
-
-function doPost (e) {
-    var lock = LockService.getScriptLock()
-    lock.tryLock(10000)
-
-    try{
-        var doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
-        var sheet = doc.getSheetByName(sheetName)
-
-        var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
-        var nextRow = sheet.getLastRow() + 1
-
-        var newRow = headers.map(function(header) {
-            return header === 'timestamp' ? new Date() : e.parameter[header]
-        })
-
-        sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
-        
-        return ContentService
-         .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
-         .setMimeType(ContentService.MimeType.JSON)
-    }
-
-    catch (e) {
-        return ContentService
-        .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e}))
-        .setMimeType(ContentService.MimeType.JSON)
-    }
-
-    finally {
-        lock.releaseLock()
-    }
-}
-                    
-            -->
-         
         </header>   
 
-        <nav></nav>
-        <main><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhpvzwjLMsQAMFPrGaK27JsQMMPTpuJSYBLWOTdw2SvYIOnw/viewform?embedded=true" width="500" height="350" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe></main>
-        <section></section>
-        <div id="a0"></div>
-        <div id="a1"></div>
-        <div id="a2"></div>
-        <div id="a3"></div>
-        <div id="a4"></div>
-         <footer></footer>
+        <nav><h1 class="primeiro">RENOVA MINAS - UMA ASSOCIAÇÃO QUE SE PREOCUPA COM VOCÊ!  </h1></nav>
+
+        <main><img src="concurso-policia-penal-mg-capa-blog.jpg" alt=""width="220%" height="100%"></main>
+      
+      
+        <section> 
+         A Associação Renova Minas, denominada de "Renova Minas" é uma entidade representativa de classe sem fins lucrativos, econômicos, políticos ou partidários, de duração indeterminada. 
+
+         Representamos o ciclo de segurança pública: Polícia Militar, Bombeiro Militar, Polícia Civil, Polícia Penal, Sistema Socioeducativo e Guarda Municipal. Nossa foco de atuação e o sistema prisional.
+
+         Temos com Visão, construir uma entidade de Classe forte com respeito aos valores esculpidos em nossa estrutura estatutária, consagradas por três bases, sendo elas: Representatividade Classista, Segurança Jurídica e Social.
+
+         Podendo pertencer ao quadro social da Renova Minas, todos servidores da área de Segurança pública, somos classistas e primamos pelo diálogo de forma a alcançar os objetivos em defesa dos direitos de nossos associados.
+       </section>
+
+
+        <div id="a0">  <a href="https://www.policiacivil.mg.gov.br/"><img src="Policia_Civil_MG121.png" alt=" "width="95%" height="95%"></a> </div>
+        <div id="a1">  <a href="https://www.policiamilitar.mg.gov.br/portal-pm/externo/principal.action"><img src="PM-MG.png" alt=" "width="100%" height="100%"></a>  </div>
+        <div id="a2">  <a href="http://www.seguranca.mg.gov.br/"><img src="sejusp-mg.webp" alt=" "width="100%" height="100%"></a>  </div>
+        <div id="a3">  <a href="http://www.depen.seguranca.mg.gov.br/ "><img src="depen mg.png" alt=" "width="100%" height="100%"></a>  </div>
+        
+        
+        <div id="a4">
+            
+            RENOVA MINAS - DEFENDE AQUELES QUE DEFENDEM! VENHA E FAÇA A DIFERENÇA - SE CADASTRE AQUI  
+
+        </div>
+
+         <footer> <form name="submit-to-google-sheet">
+
+            <input name="nome" type="text" placeholder="Nome" required>
+            <input name="masp" type="number" placeholder="Masp">
+            <input name="email" type="text" placeholder="Email">
+            <input name="mensagem" type="text" placeholder="Mensagem">
+            <input name="telefone" type="number" placeholder="Telefone">
+            <input name="endereço" type="number" placeholder="Endereço">
+
+            <button type="submit"> Enviar - entraremos em contato</button>
+
+          </form> </footer>
+
        </div>  
-
-
+       <!--essa div contem codigo de cadastro de pessoas, planilha exel criada dentro da conta google-->
 
 
 </body>
