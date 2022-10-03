@@ -60,6 +60,8 @@ main{
     background-color: rgb(210, 246, 248);
     grid-column: 1/2;
     grid-row: 3/5;
+        min-width: 300px;
+        max-width: 500px;
 }
 
 section{
