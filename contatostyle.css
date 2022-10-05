@@ -4,6 +4,7 @@ header{
     padding: 1%;
     font-size: 100%;
     border-radius: 2%;
+    text-decoration: none;
 
     background-color:rgb(190, 244, 247)  ;
 
@@ -83,7 +84,8 @@ section{
     text-align:center;
     padding: 2%;
     font-size: 100%;
-    border-radius:2%;
+    border-radius:2%;  
+    
 
     background-color: rgb(210, 246, 248);
 
